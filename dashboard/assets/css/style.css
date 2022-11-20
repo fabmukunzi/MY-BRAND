@@ -1,0 +1,423 @@
+                            @font-face {
+                                font-family: "Poppins";
+                                src: url("../../../assets/fonts/Poppins/Poppins-Light.ttf") format("truetype");
+                            }
+                            
+                             :root {
+                                --Primary-color: #42288c;
+                                --Secondary-color: #f49e1d;
+                                --Social-color: #2fcaf5;
+                                --Primary-color-active: #6e6683;
+                            }
+                            
+                            * {
+                                font-family: 'Poppins';
+                            }
+                            
+                            #body {
+                                width: 100%;
+                                height: 100%;
+                                position: fixed;
+                                inset: 0;
+                                margin: auto;
+                            }
+                            
+                            #navbar {
+                                width: 100%;
+                                height: fit-content;
+                                border-width: 0 0 1px 0;
+                                border-color: #42288C;
+                                border-style: solid;
+                                display: flex;
+                                justify-content: space-between;
+                                align-items: center;
+                                flex-wrap: wrap;
+                            }
+                            
+                            #navbar #logo-container {
+                                width: 50px;
+                                height: 50px;
+                                margin: 10px 0 10px 30px;
+                                position: relative;
+                            }
+                            
+                            #navbar #logo-container #logo {
+                                width: 50px;
+                                height: 50px;
+                                border-radius: 100%;
+                                background-image: radial-gradient(var(--Primary-color), #42288C);
+                            }
+                            
+                            #navbar #logo-container label {
+                                position: absolute;
+                                font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+                                inset: 0;
+                                font-weight: bold;
+                                font-size: 24px;
+                                color: white;
+                                width: 100%;
+                                text-align: center;
+                                margin: auto;
+                                height: fit-content;
+                            }
+                            
+                            #navbar #other {
+                                width: fit-content;
+                                height: fit-content;
+                                display: flex;
+                                justify-content: end;
+                                margin-right: 20px;
+                                margin-left: auto;
+                                margin-top: 10px;
+                                margin-bottom: 10px;
+                            }
+                            
+                            .Primary-btn {
+                                width: 3.5rem;
+                                height: fit-content;
+                                padding: 10px 30px;
+                                background-color: var(--Primary-color);
+                                color: white;
+                                border-radius: 20px;
+                                cursor: pointer;
+                            }
+                            
+                            #add-article {
+                                width: fit-content;
+                            }
+                            
+                            .Secondary-btn {
+                                text-decoration: none;
+                                width: fit-content;
+                                height: fit-content;
+                                padding: 10px 30px;
+                                background-color: var(--Secondary-color);
+                                color: white;
+                                border-radius: 20px;
+                            }
+                            
+                            #change-password-btn {
+                                width: fit-content;
+                                margin-left: 20px;
+                                margin-right: 20px;
+                            }
+                            
+                            #body-section {
+                                width: 100%;
+                                height: fit-content;
+                            }
+                            
+                            #card-container {
+                                width: 100%;
+                                height: fit-content;
+                                margin-top: 40px;
+                                display: flex;
+                                flex-wrap: wrap;
+                                justify-content: space-evenly;
+                                margin-bottom: 40px;
+                            }
+                            
+                            @property --pc {
+                                syntax: '<percentage>';
+                                inherits: false;
+                                initial-value: 30%;
+                            }
+                            
+                            @property --co {
+                                syntax: '<percentage>';
+                                inherits: false;
+                                initial-value: 100%;
+                            }
+                            
+                            #card-container .card {
+                                --pc: 0%;
+                                --co: 100%;
+                                cursor: pointer;
+                                box-shadow: 0 0 20px 0px #00000040;
+                                width: 270px;
+                                height: 130px;
+                                border-radius: 20px;
+                                transition: --pc 500ms, --co 500ms;
+                                margin: 20px;
+                                background: linear-gradient(137deg, var(--Primary-color) var(--co), #4d2ea3 var(--pc));
+                            }
+                            
+                            #card-container .card:hover {
+                                --pc: -100%;
+                                --co: 0%;
+                            }
+                            
+                            #card-container .card:hover>.label {
+                                color: white;
+                            }
+                            
+                            * {
+                                transition: 500ms;
+                            }
+                            
+                            #card-container .card .label {
+                                width: 100%;
+                                margin: 20px;
+                                font-size: 23px;
+                                font-weight: bold;
+                                color: rgb(202, 202, 202);
+                                font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+                            }
+                            
+                            #card-container .card .number {
+                                color: white;
+                                font-size: 20px;
+                                font-weight: bold;
+                                font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+                                width: 100%;
+                                text-align: center;
+                            }
+                            
+                            #table-container {
+                                width: 100%;
+                                height: fit-content;
+                            }
+                            
+                            #table-container #table-nav {
+                                width: 100%;
+                                display: flex;
+                                align-items: center;
+                                height: 70px;
+                                /* background-color: black; */
+                                justify-content: space-between;
+                            }
+                            
+                            #table-container #table-nav #title {
+                                width: fit-content;
+                                height: fit-content;
+                                color: rgb(82, 82, 82);
+                                font-size: 30px;
+                                font-weight: bold;
+                                margin-left: 30px;
+                                font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+                            }
+                            
+                            #table-container #table-nav #other {
+                                width: fit-content;
+                                height: fit-content;
+                                display: flex;
+                            }
+                            
+                            #table-container #table-nav #other .modes {
+                                width: fit-content;
+                                height: fit-content;
+                                border-radius: 10px;
+                                padding: 8px 15px;
+                                color: white;
+                                background-color: var(--Primary-color);
+                                margin-right: 15rem;
+                                cursor: pointer;
+                            }
+                            
+                            #table-container #table-nav #other .active {
+                                margin-left: 18rem;
+                                background-color: var(--Primary-color-active);
+                            }
+                            
+                            #table-container #table1 {
+                                width: 100%;
+                                height: fit-content;
+                                overflow-x: scroll;
+                            }
+                            
+                            #table-container .table table {
+                                width: 90%;
+                            }
+                            /* @import url('https://fonts.googleapis.com/css?family=Amarante'); */
+                            
+                            #table-container .table ::selection {
+                                background: #5f74a0;
+                                color: #fff;
+                            }
+                            
+                            #table-container .table br {
+                                display: block;
+                                line-height: 1.6em;
+                            }
+                            
+                            #table-container .table article,
+                            aside,
+                            details,
+                            figcaption,
+                            figure,
+                            footer,
+                            header,
+                            hgroup,
+                            menu,
+                            nav,
+                            section {
+                                display: block;
+                            }
+                            
+                            ol,
+                            ul {
+                                list-style: none;
+                            }
+                            
+                            #table-container .table table {
+                                border-collapse: collapse;
+                                border-spacing: 0;
+                            }
+                            
+                            #table-container .table #keywords {
+                                margin: 0 auto;
+                                font-size: 1.2em;
+                                margin-bottom: 15px;
+                            }
+                            
+                            #table-container .table #keywords thead {
+                                cursor: pointer;
+                                /* background: var(--Primary-color); */
+                                color: black;
+                            }
+                            
+                            #table-container .table #keywords thead tr th:first-child {
+                                border-radius: 40px 0 0 40px;
+                            }
+                            
+                            #table-container .table #keywords thead tr th:last-child {
+                                border-radius: 0px 40px 40px 0px;
+                            }
+                            
+                            #table-container .table #keywords thead tr th {
+                                font-weight: bold;
+                                padding: 12px 30px;
+                                background-color: var(--Primary-color);
+                                color: white;
+                                padding-left: 42px;
+                            }
+                            
+                            #table-container .table #keywords thead tr th span {
+                                padding-right: 20px;
+                                background-repeat: no-repeat;
+                                background-position: 100% 100%;
+                            }
+                            
+                            #table-container .table #keywords thead tr th.headerSortUp,
+                            #keywords thead tr th.headerSortDown {
+                                background: #acc8dd;
+                            }
+                            
+                            #table-container .table #keywords thead tr th.headerSortUp span {
+                                background-image: url('https://i.imgur.com/SP99ZPJ.png');
+                            }
+                            
+                            #table-container .table #keywords thead tr th.headerSortDown span {
+                                background-image: url('https://i.imgur.com/RkA9MBo.png');
+                            }
+                            
+                            #table-container .table #keywords tbody tr {
+                                color: #555;
+                            }
+                            
+                            #table-container .table #keywords tbody tr td:last-child div {
+                                margin: 0 5px;
+                                cursor: pointer;
+                            }
+                            
+                            #table-container .table #keywords tbody tr td:last-child {
+                                display: flex;
+                                justify-content: center;
+                                margin: auto;
+                            }
+                            
+                            #table-container .table #keywords tbody tr td {
+                                text-align: center;
+                                padding: 15px 10px;
+                            }
+                            
+                            #table-container .table #keywords tbody tr td.lalign {
+                                text-align: left;
+                            }
+                            
+                            #body {
+                                overflow-y: scroll;
+                            }
+                            
+                            .comments,
+                            .messages {
+                                display: none;
+                            }
+                            
+                            .modal {
+                                display: none;
+                                position: fixed;
+                                z-index: 1;
+                                padding-top: 100px;
+                                left: 0;
+                                top: 0;
+                                width: 100%;
+                                height: 100%;
+                                overflow: auto;
+                                background-color: rgba(0, 0, 0, 0.8);
+                            }
+                            
+                            .modal-content {
+                                background-color: #fefefe;
+                                margin: auto;
+                                padding: 20px;
+                                border: 1px solid #888;
+                                width: 80%;
+                            }
+                            
+                            .close {
+                                color: #aaaaaa;
+                                float: right;
+                                font-size: 28px;
+                                font-weight: bold;
+                            }
+                            
+                            .close:hover,
+                            .close:focus {
+                                color: #000;
+                                text-decoration: none;
+                                cursor: pointer;
+                            }
+                            
+                            input {
+                                padding: 1rem;
+                                border: 3px solid #F49E1D;
+                                border-radius: 0.5rem;
+                                display: block;
+                                margin-right: auto;
+                                margin-left: auto;
+                                margin-bottom: 3rem;
+                                width: 18rem;
+                            }
+                            
+                            button {
+                                background: #F49E1D;
+                                border-radius: 0.5rem;
+                                border: none;
+                                padding: 1rem;
+                                width: 20rem;
+                                font-weight: bolder;
+                                font-size: large;
+                            }
+                            
+                            #add-articles,
+                            #edit-articles {
+                                text-align: center;
+                            }
+                            
+                            @media screen and (max-width:768px) {
+                                #table-container #table-nav #other .modes {
+                                    width: fit-content;
+                                    height: fit-content;
+                                    border-radius: 10px;
+                                    padding: 8px 15px;
+                                    color: white;
+                                    background-color: var(--Primary-color);
+                                    margin-right: 1rem;
+                                    cursor: pointer;
+                                }
+                                #table-container #table-nav #other .active {
+                                    margin-left: 2rem;
+                                    background-color: var(--Primary-color-active);
+                                }
+                            }
