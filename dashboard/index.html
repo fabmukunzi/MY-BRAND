@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./assets/css/style.css">
+    <link rel="shortcut icon" href="../assets/img/profle-modified.png" type="image/x-icon">
+</head>
+
+<body>
+    <div id="body">
+        <div id="navbar">
+            <div id="logo-container">
+                <div id="logo"></div>
+                <label for="">FM</label>
+            </div>
+            <div id="other">
+                <div id="add-article" class="Primary-btn" onclick="AddArticle()">Add Article</div>
+                <div id="change-password-btn" class="Primary-btn">Change password</div>
+                <a href="../index.html#login" id="logout-btn" class="Secondary-btn">LOGOUT</a>
+            </div>
+        </div>
+        <div id="body-section">
+            <div id="card-container">
+                <div class="card">
+                    <div class="label">Articles</div>
+                    <div class="number">
+                        12
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="label">Comments / new</div>
+                    <div class="number">
+                        40 <sub>(1)</sub>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="label">Messages / new</div>
+                    <div class="number">
+                        3 <sub>(7)</sub>
+                    </div>
+                </div>
+
+            </div>
+            <div id="table-container">
+                <div id="table-nav">
+                    <!--<div id="title">Table</div>-->
+                    <div id="other">
+                        <div class="modes active" id="showarticles" onclick="showArticles()">Articles</div>
+                        <div class="modes" id="showcomments" onclick="showComments()">Comments</div>
+                        <div class="modes" id="showmessages" onclick="showMessages()">Messages</div>
+                    </div>
+                </div>
+                <div id="table1" class="articles table">
+
+                    <table class="keywords" cellspacing="0" cellpadding="0">
+                        <thead>
+                            <tr>
+                                <th><span>Article Title</span></th>
+                                <th><span>Creation Date</span></th>
+                                <th><span>Options</span></th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td class="lalign">SheCanCode in Rwanda</td>
+                                <td>Thursday, 24 November 2022</td>
+                                <td>
+                                    <div class="Primary-btn" id="edit-article" onclick="EditArticles()">Edit</div>
+                                    <div class="Secondary-btn">Delete</div>
+                                </td>
+
+                            </tr>
+                            <tr>
+                                <td class="lalign">Andela in Rwanda</td>
+                                <td>Thursday, 24 November 2022</td>
+                                <td>
+                                    <div class="Primary-btn">Edit</div>
+                                    <div class="Secondary-btn">Delete</div>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div id="table2" class="comments table">
+
+                    <table class="keywords" cellspacing="0" cellpadding="0">
+                        <thead>
+                            <tr>
+                                <th><span>Name</span></th>
+                                <th><span>Date</span></th>
+                                <th><span>Comment</span></th>
+                                <th><span>Options</span></th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td class="lalign">Rumanzi Bonheur</td>
+                                <td>Thursday, 24 November 2022</td>
+                                <td>Would you send me a link to join andela</td>
+                                <td>
+
+                                    <div class="Secondary-btn">Delete</div>
+                                </td>
+
+                            </tr>
+                            <tr>
+                                <td class="lalign">Rumanzi Bonheur</td>
+                                <td>Thursday, 24 November 2022</td>
+                                <td>Would you send me a link to join andela</td>
+                                <td>
+
+                                    <div class="Secondary-btn">Delete</div>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div id="table3" class="messages table">
+
+                    <table class="keywords" cellspacing="0" cellpadding="0">
+                        <thead>
+                            <tr>
+                                <th><span>Name</span></th>
+                                <th><span>Date</span></th>
+                                <th><span>Message</span></th>
+                                <th><span>Options</span></th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td class="lalign">Vicky Luanda</td>
+                                <td>Thursday, 24 November 2022</td>
+                                <td>Hello bro you did a great work!!congz</td>
+                                <td>
+                                    <div class="Secondary-btn">Delete</div>
+                                </td>
+
+                            </tr>
+                            <tr>
+                                <td class="lalign">Vicky Luanda</td>
+                                <td>Thursday, 24 November 2022</td>
+                                <td>Hello bro you did a great work!!congz</td>
+                                <td>
+                                    <div class="Secondary-btn">Delete</div>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="add-articles" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <div class="profile">
+                <div class="profile-head" style="font-size: 2rem;font-weight:bold;">Add Article</div>
+                <div class="add-article-form">
+                    <label for="names">Title</label>
+                    <input type="text" name="names" id="update-names">
+                    <label for="cover-pic">Cover Picture</label>
+                    <input type="file" name="profile-pic" id="profile-pic">
+                    <label for="description">Description</label> <input type="text" name="update-pass" id="update-password">
+                    <button>Add</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="edit-articles" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <div class="profile">
+                <div class="profile-head" style="font-size: 2rem;font-weight:bold;">Edit Article</div>
+                <div class="add-article-form">
+                    <label for="names">Title</label>
+                    <input type="text" name="names" id="update-names">
+                    <label for="cover-pic">Cover Picture</label>
+                    <input type="file" name="profile-pic" id="profile-pic">
+                    <label for="description">Description</label> <input type="text" name="update-pass" id="update-password">
+                    <button>Update</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="./assets/js/main.js"></script>
+</body>
+
+</html>
