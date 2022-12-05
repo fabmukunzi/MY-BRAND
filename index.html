@@ -149,23 +149,27 @@
             </div>
             <div class="contact-form">
                 <p style="text-align: center;font-size:1.7rem;position: relative;top:0rem;">Contact me</p>
-                <form action="#" id="contact-me">
+                <form action="index.html" id="contact-me" onkeypress="return contactValidation()" onsubmit="return contactSubValidation()">
                     <div class="user-info">
                         <label for="name">Your Name</label>
                         <input type="text" name="names" id="names">
+                        <div class="error names-error" id="names-error">Please Enter valid names</div>
                         <label for="email">Your Email</label>
                         <input type="email" name="email" id="email">
+                        <div class="error email-error" id="email-error">Please Enter a valid Email</div>
                         <label for="phone">Your Phone</label>
-                        <input type="number" name="phone" id="phone">
+                        <input type="text" name="phone" id="phone">
+                        <div class="error phone-error" id="phone-error">Invalid Phone number</div>
                     </div>
                     <div class="msg">
                         <label for="message">Your message</label>
                         <textarea name="message" id="message" cols="30" rows="10"></textarea>
-                        <button type="submit">Send</button>
+                        <button type="submit" style="cursor: pointer;">Send</button>
                     </div>
                 </form>
             </div>
         </div>
+        <!--Login-->
         <div class="login" id="login">
             <div class="login-msg">
                 <div id="login-head">
@@ -179,20 +183,26 @@
                     <h3>Hello Again!</h3>
                     <h4>You can login here to add articles</h4>
                 </div>
-                <form action="#" id="login-form">
+                <form action="./dashboard/index.html" id="login-form" onkeypress="return loginValidation();" onsubmit="return loginSubValidation();">
                     <div class="login-data">
-                        <input type="text" name="username" id="username" placeholder="Username">
-                        <input type="password" name="password" id="password" placeholder="Password">
-                        <a href="./dashboard/index.html" style="background: #F49E1D;border-radius: 0.5rem;border: none;padding-right:4rem;padding-left:4rem;padding-top:0.8rem;padding-bottom:0.8rem;">Log in</a>
+                        <input type="text" name="username" id="username" placeholder="Email">
+                        <div class="error username-error" id="username-error">Please Enter a valid email</div>
+                        <input type="password" name="password " id="password" placeholder="Password ">
+                        <div class="error password-error" id="password-error">Enter atleas 1 capital 1 small 1 digit and 1 symbol</div>
+                        <button type="submit" style="cursor: pointer;">Login</button>
                     </div>
-                    <div class="not-member">
-                        Don't have account yet?<a href="#" style="color:#42288C">Sign up</a>
+                    <div class="not-member ">
+                        Don't have account yet?<a href="# " style="color:#42288C ">Sign up</a>
                     </div>
                 </form>
             </div>
         </div>
 
     </main>
+
+    <script src="./js/main.js "></script>
+    <script src="./js/login.js "></script>
+    <script src="./js/storage.js"></script>
 </body>
 
 </html>

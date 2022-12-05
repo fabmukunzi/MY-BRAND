@@ -6,6 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./assets/css/style.css">
+    <script src="https://kit.fontawesome.com/f559c39257.js" crossorigin="anonymous"></script>
     <link rel="shortcut icon" href="../assets/img/profle-modified.png" type="image/x-icon">
 </head>
 
@@ -153,18 +154,38 @@
             </div>
         </div>
     </div>
+    <script>
+        const [desc, setDesc] = useState("");
+        const [title, setTitle] = useState("");
+        const [image, setImage] = useState("");
+    </script>
     <div id="add-articles" class="modal">
         <div class="modal-content">
             <span class="close">&times;</span>
             <div class="profile">
                 <div class="profile-head" style="font-size: 2rem;font-weight:bold;">Add Article</div>
                 <div class="add-article-form">
-                    <label for="names">Title</label>
-                    <input type="text" name="names" id="update-names">
-                    <label for="cover-pic">Cover Picture</label>
-                    <input type="file" name="profile-pic" id="profile-pic">
-                    <label for="description">Description</label> <input type="text" name="update-pass" id="update-password">
-                    <button>Add</button>
+                    <form action="./index.html" onkeypress="return validateArticle()" onsubmit="return validateSubArticle()">
+                        <label for="names">Title</label>
+                        <input type="text" name="title" id="new-title">
+                        <div class="error add-title-error">Invalid Title</div>
+                        <label for="cover-pic">Cover Picture</label>
+                        <input type="file" name="profile-pic" id="cover-pic" accept=".jpg, .jpeg, .png">
+                        <div class="error add-cover-error">Please Insert an Image</div>
+                        <label for="description">Add Description</label>
+                        <div id="toolbar">
+                            <button id="bold" onclick="makeBold()"> <i class="fa-solid fa-bold"></i> </button>
+                            <button id="italic" onclick="makeItalic()"> <i class="fa-solid fa-italic"></i> </button>
+                            <button id="underline" onclick="doUnderline()"> <i class="fa-solid fa-underline"></i> </button>
+
+                            <button onclick="justifyLeft()"> <i class="fa-solid fa-align-left"></i> </button>
+                            <button onclick="justifyCenter()"> <i class="fa-solid fa-align-center"></i> </button>
+                            <button onclick="justifyRight()"> <i class="fa-solid fa-align-right"></i> </button>
+                        </div>
+                        <div id="editor" contenteditable="true"></div>
+                        <div class="error add-desc-error">Invalid description</div>
+                        <button type="submit">Add</button>
+                    </form>
                 </div>
             </div>
         </div>
@@ -174,18 +195,32 @@
             <span class="close">&times;</span>
             <div class="profile">
                 <div class="profile-head" style="font-size: 2rem;font-weight:bold;">Edit Article</div>
-                <div class="add-article-form">
-                    <label for="names">Title</label>
-                    <input type="text" name="names" id="update-names">
-                    <label for="cover-pic">Cover Picture</label>
-                    <input type="file" name="profile-pic" id="profile-pic">
-                    <label for="description">Description</label> <input type="text" name="update-pass" id="update-password">
-                    <button>Update</button>
+                <div class="edit-article-form">
+                    <form action="./index.html" onsubmit="return validateEditArticle()">
+                        <label for="names">Title</label>
+                        <input type="text" name="title" id="update-title">
+                        <label for="cover-pic">Cover Picture</label>
+                        <input type="file" name="profile-pic" id="edit-cover-pic" accept="image/png, image/jpeg">
+                        <label for="description">Update Description</label>
+                        <div id="toolbar">
+                            <button id="bold" onclick="makeBold()"> <i class="fa-solid fa-bold"></i> </button>
+                            <button id="italic" onclick="makeItalic()"> <i class="fa-solid fa-italic"></i> </button>
+                            <button id="underline" onclick="doUnderline()"> <i class="fa-solid fa-underline"></i> </button>
+
+                            <button onclick="justifyLeft()"> <i class="fa-solid fa-align-left"></i> </button>
+                            <button onclick="justifyCenter()"> <i class="fa-solid fa-align-center"></i> </button>
+                            <button onclick="justifyRight()"> <i class="fa-solid fa-align-right"></i> </button>
+                        </div>
+                        <div id="editor" contenteditable="true"></div>
+                        <button type="submit" style="cursor: pointer;">Update</button>
+                    </form>
                 </div>
             </div>
         </div>
     </div>
+    <script src="../js/storage.js"></script>
     <script src="./assets/js/main.js"></script>
+    <script src="../js/login.js"></script>
 </body>
 
 </html>
