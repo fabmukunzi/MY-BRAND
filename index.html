@@ -17,13 +17,13 @@
                 <a href="#home">FM</a>
             </div>
             <ul id="nav-links">
-                <li><span id="line"></span><a href="#home" id="active">Home</a></li>
-                <li><a href="#about">About</a></li>
-                <li><a href="#skills">Skills</a></li>
-                <li><a href="#portfolio">Portfolio</a></li>
-                <li><a href="#contact">Contact Me</a></li>
-                <li><a href="./blogs.html">Blogs</a></li>
-                <li><a href="#login">Login</a></li>
+                <li class="active nav-link"><a href="#home">Home</a></li>
+                <li class="nav-link"><a href="#about">About</a></li>
+                <li class="nav-link"><a href="#skills">Skills</a></li>
+                <li class="nav-link"><a href="#portfolio">Portfolio</a></li>
+                <li class="nav-link"><a href="#contact">Contact Me</a></li>
+                <li class="nav-link"><a href="./blogs.html">Blogs</a></li>
+                <li class="nav-link"><a href="#login">Login</a></li>
             </ul>
         </div>
     </div>
@@ -67,7 +67,7 @@
                 Sorry, your browser does not support inline SVG.
             </svg>
             <svg height="300" width="300" id="about-small">
-                <ellipse cx="200" cy="200" rx="30" ry="30" style="fill:#42288C" />
+                <ellipse cx="200" cy="240" rx="30" ry="30" style="fill:#42288C" />
                 Sorry, your browser does not support inline SVG.
             </svg>
             <div class="about-img"><img src="./assets/img/hunting-header.png" alt="unavailable"></div>
@@ -149,7 +149,7 @@
             </div>
             <div class="contact-form">
                 <p style="text-align: center;font-size:1.7rem;position: relative;top:0rem;">Contact me</p>
-                <form action="index.html" id="contact-me" onkeypress="return contactValidation()" onsubmit="return contactSubValidation()">
+                <form method="post" id="contact-me" onkeypress="return contactValidation()" onsubmit="return contactSubValidation()">
                     <div class="user-info">
                         <label for="name">Your Name</label>
                         <input type="text" name="names" id="names">
@@ -164,6 +164,7 @@
                     <div class="msg">
                         <label for="message">Your message</label>
                         <textarea name="message" id="message" cols="30" rows="10"></textarea>
+                        <div class="error msg-error">Message cant be empty</div>
                         <button type="submit" style="cursor: pointer;">Send</button>
                     </div>
                 </form>
@@ -183,13 +184,13 @@
                     <h3>Hello Again!</h3>
                     <h4>You can login here to add articles</h4>
                 </div>
-                <form action="./dashboard/index.html" id="login-form" onkeypress="return loginValidation();" onsubmit="return loginSubValidation();">
+                <form method="post" id="login-form" onkeypress="return loginValidation();" onsubmit="return loginSubValidation();">
                     <div class="login-data">
                         <input type="text" name="username" id="username" placeholder="Email">
                         <div class="error username-error" id="username-error">Please Enter a valid email</div>
                         <input type="password" name="password " id="password" placeholder="Password ">
                         <div class="error password-error" id="password-error">Enter atleas 1 capital 1 small 1 digit and 1 symbol</div>
-                        <button type="submit" style="cursor: pointer;">Login</button>
+                        <button type="button" style="cursor: pointer;" id="btn-login">Login</button>
                     </div>
                     <div class="not-member ">
                         Don't have account yet?<a href="# " style="color:#42288C ">Sign up</a>
@@ -200,9 +201,8 @@
 
     </main>
 
-    <script src="./js/main.js "></script>
-    <script src="./js/login.js "></script>
-    <script src="./js/storage.js"></script>
+    <script src="./js/main.js"></script>
+    <script src="./js/validations.js"></script>
 </body>
 
 </html>

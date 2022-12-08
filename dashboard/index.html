@@ -28,19 +28,19 @@
                 <div class="card">
                     <div class="label">Articles</div>
                     <div class="number">
-                        12
+                        0
                     </div>
                 </div>
                 <div class="card">
-                    <div class="label">Comments / new</div>
+                    <div class="label">Comments</div>
                     <div class="number">
-                        40 <sub>(1)</sub>
+                        0
                     </div>
                 </div>
                 <div class="card">
-                    <div class="label">Messages / new</div>
+                    <div class="label">Messages</div>
                     <div class="number">
-                        3 <sub>(7)</sub>
+                        0
                     </div>
                 </div>
 
@@ -54,7 +54,7 @@
                         <div class="modes" id="showmessages" onclick="showMessages()">Messages</div>
                     </div>
                 </div>
-                <div id="table1" class="articles table">
+                <div id="table1" class="articless table">
 
                     <table class="keywords" cellspacing="0" cellpadding="0">
                         <thead>
@@ -64,24 +64,8 @@
                                 <th><span>Options</span></th>
                             </tr>
                         </thead>
-                        <tbody>
-                            <tr>
-                                <td class="lalign">SheCanCode in Rwanda</td>
-                                <td>Thursday, 24 November 2022</td>
-                                <td>
-                                    <div class="Primary-btn" id="edit-article" onclick="EditArticles()">Edit</div>
-                                    <div class="Secondary-btn">Delete</div>
-                                </td>
-
-                            </tr>
-                            <tr>
-                                <td class="lalign">Andela in Rwanda</td>
-                                <td>Thursday, 24 November 2022</td>
-                                <td>
-                                    <div class="Primary-btn">Edit</div>
-                                    <div class="Secondary-btn">Delete</div>
-                                </td>
-                            </tr>
+                        <tbody id="article-section">
+                            <!--from localstorage-->
                         </tbody>
                     </table>
                 </div>
@@ -93,29 +77,11 @@
                                 <th><span>Name</span></th>
                                 <th><span>Date</span></th>
                                 <th><span>Comment</span></th>
-                                <th><span>Options</span></th>
+                                <!-- <th><span>Option</span></th> -->
                             </tr>
                         </thead>
-                        <tbody>
-                            <tr>
-                                <td class="lalign">Rumanzi Bonheur</td>
-                                <td>Thursday, 24 November 2022</td>
-                                <td>Would you send me a link to join andela</td>
-                                <td>
-
-                                    <div class="Secondary-btn">Delete</div>
-                                </td>
-
-                            </tr>
-                            <tr>
-                                <td class="lalign">Rumanzi Bonheur</td>
-                                <td>Thursday, 24 November 2022</td>
-                                <td>Would you send me a link to join andela</td>
-                                <td>
-
-                                    <div class="Secondary-btn">Delete</div>
-                                </td>
-                            </tr>
+                        <tbody id="comments-section">
+                            <!-- comments from db -->
                         </tbody>
                     </table>
                 </div>
@@ -127,64 +93,42 @@
                                 <th><span>Name</span></th>
                                 <th><span>Date</span></th>
                                 <th><span>Message</span></th>
-                                <th><span>Options</span></th>
+                                <th><span>Contacts</span></th>
+                                <th><span>Option</span></th>
                             </tr>
                         </thead>
-                        <tbody>
-                            <tr>
-                                <td class="lalign">Vicky Luanda</td>
-                                <td>Thursday, 24 November 2022</td>
-                                <td>Hello bro you did a great work!!congz</td>
-                                <td>
-                                    <div class="Secondary-btn">Delete</div>
-                                </td>
-
-                            </tr>
-                            <tr>
-                                <td class="lalign">Vicky Luanda</td>
-                                <td>Thursday, 24 November 2022</td>
-                                <td>Hello bro you did a great work!!congz</td>
-                                <td>
-                                    <div class="Secondary-btn">Delete</div>
-                                </td>
-                            </tr>
+                        <tbody id="message-section">
+                            <!-- from database -->
                         </tbody>
                     </table>
                 </div>
             </div>
         </div>
     </div>
-    <script>
-        const [desc, setDesc] = useState("");
-        const [title, setTitle] = useState("");
-        const [image, setImage] = useState("");
-    </script>
     <div id="add-articles" class="modal">
         <div class="modal-content">
             <span class="close">&times;</span>
             <div class="profile">
                 <div class="profile-head" style="font-size: 2rem;font-weight:bold;">Add Article</div>
                 <div class="add-article-form">
-                    <form action="./index.html" onkeypress="return validateArticle()" onsubmit="return validateSubArticle()">
-                        <label for="names">Title</label>
-                        <input type="text" name="title" id="new-title">
+                    <form onkeypress="return validateArticle()" onsubmit="return validateSubArticle()">
+                        <label for="names"></label>
+                        <input type="text" name="title" id="new-title" placeholder="Title">
                         <div class="error add-title-error">Invalid Title</div>
-                        <label for="cover-pic">Cover Picture</label>
-                        <input type="file" name="profile-pic" id="cover-pic" accept=".jpg, .jpeg, .png">
+                        <label for="cover-pic" class="cover-pic-label">Cover Picture</label>
+                        <input type="file" name="profile-pic" id="cover-pic" accept=".jpg, .jpeg, .png" hidden>
                         <div class="error add-cover-error">Please Insert an Image</div>
-                        <label for="description">Add Description</label>
                         <div id="toolbar">
-                            <button id="bold" onclick="makeBold()"> <i class="fa-solid fa-bold"></i> </button>
-                            <button id="italic" onclick="makeItalic()"> <i class="fa-solid fa-italic"></i> </button>
-                            <button id="underline" onclick="doUnderline()"> <i class="fa-solid fa-underline"></i> </button>
-
-                            <button onclick="justifyLeft()"> <i class="fa-solid fa-align-left"></i> </button>
-                            <button onclick="justifyCenter()"> <i class="fa-solid fa-align-center"></i> </button>
-                            <button onclick="justifyRight()"> <i class="fa-solid fa-align-right"></i> </button>
+                            <button type="button" id="bold" onclick="makeBold()"> <i class="fa-solid fa-bold"></i> </button>
+                            <button type="button" id="italic" onclick="makeItalic()"> <i class="fa-solid fa-italic"></i> </button>
+                            <button type="button" id="underline" onclick="doUnderline()"> <i class="fa-solid fa-underline"></i> </button>
+                            <button type="button" onclick="justifyLeft()"> <i class="fa-solid fa-align-left"></i> </button>
+                            <button type="button" onclick="justifyCenter()"> <i class="fa-solid fa-align-center"></i> </button>
+                            <button type="button" onclick="justifyRight()"> <i class="fa-solid fa-align-right"></i> </button>
                         </div>
-                        <div id="editor" contenteditable="true"></div>
+                        <div id="editor" contenteditable="true" placeholder="Add Description" oninput="if(this.innerHTML.trim()==='<br>')this.innerHTML=''"></div>
                         <div class="error add-desc-error">Invalid description</div>
-                        <button type="submit">Add</button>
+                        <button type="button" id="send-article">Add</button>
                     </form>
                 </div>
             </div>
@@ -196,31 +140,54 @@
             <div class="profile">
                 <div class="profile-head" style="font-size: 2rem;font-weight:bold;">Edit Article</div>
                 <div class="edit-article-form">
-                    <form action="./index.html" onsubmit="return validateEditArticle()">
+                    <form method="post" onkeypress="return validateArticle()" onsubmit="return validateSubArticle()">
                         <label for="names">Title</label>
-                        <input type="text" name="title" id="update-title">
-                        <label for="cover-pic">Cover Picture</label>
-                        <input type="file" name="profile-pic" id="edit-cover-pic" accept="image/png, image/jpeg">
-                        <label for="description">Update Description</label>
+                        <input type="text" name="title" id="edit-title">
+                        <div class="error add-title-error">Invalid Title</div>
+                        <label for="edit-cover-pic" class="cover-pic-label">Cover Picture</label>
+                        <input type="file" name="edit-profile-pic" id="edit-cover-pic" accept=".jpg, .jpeg, .png">
+                        <div class="error add-cover-error">Please Insert an Image</div>
                         <div id="toolbar">
-                            <button id="bold" onclick="makeBold()"> <i class="fa-solid fa-bold"></i> </button>
-                            <button id="italic" onclick="makeItalic()"> <i class="fa-solid fa-italic"></i> </button>
-                            <button id="underline" onclick="doUnderline()"> <i class="fa-solid fa-underline"></i> </button>
-
-                            <button onclick="justifyLeft()"> <i class="fa-solid fa-align-left"></i> </button>
-                            <button onclick="justifyCenter()"> <i class="fa-solid fa-align-center"></i> </button>
-                            <button onclick="justifyRight()"> <i class="fa-solid fa-align-right"></i> </button>
+                            <button type="button" id="bold" onclick="makeBold()"> <i class="fa-solid fa-bold"></i> </button>
+                            <button type="button" id="italic" onclick="makeItalic()"> <i class="fa-solid fa-italic"></i> </button>
+                            <button type="button" id="underline" onclick="doUnderline()"> <i class="fa-solid fa-underline"></i> </button>
+                            <button type="button" onclick="justifyLeft()"> <i class="fa-solid fa-align-left"></i> </button>
+                            <button type="button" onclick="justifyCenter()"> <i class="fa-solid fa-align-center"></i> </button>
+                            <button type="button" onclick="justifyRight()"> <i class="fa-solid fa-align-right"></i> </button>
                         </div>
-                        <div id="editor" contenteditable="true"></div>
-                        <button type="submit" style="cursor: pointer;">Update</button>
+                        <div id="ed" contenteditable="true"></div>
+                        <div class="error add-desc-error">Invalid description</div>
+                        <button type="submit" id="update-article">Update</button>
                     </form>
                 </div>
             </div>
         </div>
     </div>
-    <script src="../js/storage.js"></script>
+    <script>
+    //     let data=new FormData();
+    //          data.append("title", title.value);
+    //          data.append("content", description.innerHTML);
+    //          data.append("image", picture.files[0].name)
+    //  let bToken=JSON.parse(localStorage.getItem("token"))
+    //     fetch("https://my-brand-backend.up.railway.app/api/v1/blogs",{
+    //         method:"POST",
+    //         headers:{"Authorization":"Bearer "+bToken},
+    //         body:data,
+            
+    // }).then(res=>{return res.json()})
+    // .then((data)=>{
+    //     console.log(bToken.token)
+    // if(data.message==="Unauthorized request"){
+    //     alert("you need to login first")
+    //     window.location.replace("http://127.0.0.1:5502/index.html#login");
+    //     //window.location("")
+    // }}
+    // )
+    // .catch((err)=>console.log(err))
+    </script>
+    <script src="../js/dashboard.js"></script>
+    <script src="../js/dashValidations.js"></script>
     <script src="./assets/js/main.js"></script>
-    <script src="../js/login.js"></script>
 </body>
 
 </html>

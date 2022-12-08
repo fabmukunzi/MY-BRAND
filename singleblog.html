@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SheCanCancode</title>
+    <title>Fabrice | | Blogs</title>
     <link rel="stylesheet" href="./css/style.css">
     <script src="https://kit.fontawesome.com/f559c39257.js" crossorigin="anonymous"></script>
     <link rel="shortcut icon" href="./assets/img/profle-modified.png" type="image/x-icon">
@@ -13,100 +13,67 @@
 
 <body>
 
-    <body style="overflow-x: hidden;padding-bottom: 5rem;">
+    <body style="white-space: 0;">
         <div class="header">
             <div class="nav">
                 <div class="logo">
                     <a href="#home">FM</a>
                 </div>
                 <ul id="nav-links">
-                    <li><a href="index.html">Home</a></li>
-                    <li><a href=" index.html#about ">About</a></li>
-                    <li><a href="index.html#skills ">Skills</a></li>
-                    <li><a href="index.html#portfolio ">Portfolio</a></li>
-                    <li><a href="index.html#contact ">Contact Me</a></li>
-                    <li><span id="line"></span><a href="blogs.html " id="active">Blogs</a></li>
-                    <li><a href="index.html#login ">Login</a></li>
+                    <li class="nav-link"><a href="index.html">Home</a></li>
+                    <li class="nav-link"><a href=" index.html#about ">About</a></li>
+                    <li class="nav-link"><a href="index.html#skills ">Skills</a></li>
+                    <li class="nav-link"><a href="index.html#portfolio ">Portfolio</a></li>
+                    <li class="nav-link"><a href="index.html#contact ">Contact Me</a></li>
+                    <li class="nav-link active"><a href="blogs.html ">Blogs</a></li>
+                    <li class="nav-link"><a href="index.html#login ">Login</a></li>
                 </ul>
             </div>
         </div>
         <div class="single-article">
-            <div class="single-article-pic"><img src="./assets/img/vicky.jpg" alt="unavailable"></div>
-            <div class="special-desc">
-                <div class="single-article-date ">March 06,2022</div>
-                <div class="single-article-title ">SheCanCode The best Choice For Young <br> female software engineers</div>
-            </div>
+            <div class="single-article-pic"><img src="" alt="unavailable" id="image"></div>
+                <div class="special-desc">
+                    <div class="single-article-date"></div>
+                    <div class="single-article-title"></div>
+                </div>
             <div class="single-article-desc">
-                <p>SheCanCode is on a mission to close Tech Gender Gap We help women to enter , remain and excel in the tech industry</p>
-                <p>We help companies o attract and hire a more diverse workforce.</p>
-                <p>We started as a women in tech blog and have evolved and grown our platform into an active women-in-tech support hub, providing tools and resourcesforwomen who are in careersin tech or are considering enteringor trasitioning into a careerint
-                    tech.We now have a lively and active increasing every day
-                </p>
+
             </div>
             <div class="single-article-reactions">
-                <div class="single-article-comment"><img src="./assets/img/icons8-speech-bubble-96.png" id="comment-img">
-                    <p id="no-comments">20</p>
+                <div class="single-article-comment">
+                    <i class="fa-regular fa-comment fa-flip-horizontal" id="comment-img" style="color:#42288C;"></i>
+                    <p id="no-comments">0</p>
                 </div>
                 <div class="single-article-likes">
-                    <i class="fa-regular fa-heart" id="like-img" style="cursor: pointer;font-size: 3rem;"></i>
-                    <p id="no-likes"></p>
+                    <i class="fa-regular fa-heart" id="like-img" style="cursor: pointer;color:#42288C;"></i>
+                    <p id="no-likes">0</p>
                 </div>
             </div>
         </div>
         <div class="add-comment">
             <div id="toolbar">
-                <div id="title"> Leave a comment</div><br>
-                <input type="text" id="names" placeholder="Your name">
-                <button id="bold" onclick="makeBold()"> <i class="fa-solid fa-bold"></i> </button>
-                <button id="italic" onclick="makeItalic()"> <i class="fa-solid fa-italic"></i> </button>
-                <button id="underline" onclick="doUnderline()"> <i class="fa-solid fa-underline"></i> </button>
-
-                <button onclick="justifyLeft()"> <i class="fa-solid fa-align-left"></i> </button>
-                <button onclick="justifyCenter()"> <i class="fa-solid fa-align-center"></i> </button>
-                <button onclick="justifyRight()"> <i class="fa-solid fa-align-right"></i> </button>
+                <form id="commentForm"  onsubmit="checkEditor();">
+                    <div id="title"> Leave a comment</div><br>
+                    <input type="text" id="names" placeholder="Your name">
+                    <button id="bold" onclick="makeBold()"  type="button"> <i class="fa-solid fa-bold"></i> </button>
+                    <button id="italic" onclick="makeItalic()"  type="button"> <i class="fa-solid fa-italic"></i> </button>
+                    <button id="underline" onclick="doUnderline()"  type="button"> <i class="fa-solid fa-underline"></i> </button>
+                    <button onclick="justifyLeft()"  type="button"> <i class="fa-solid fa-align-left"></i> </button>
+                    <button onclick="justifyCenter()"  type="button"> <i class="fa-solid fa-align-center"></i> </button>
+                    <button onclick="justifyRight()"  type="button"> <i class="fa-solid fa-align-right"></i> </button>
             </div>
             <div id="editor" contenteditable="true"></div>
-            <button id="btn-post" type="submit" onclick="checkEditor();">Post Comment</button>
+            <button id="btn-post" type="button">Post Comment</button>
+            </form>
         </div>
 
         <div class="comments">
             <div id="comment-title">Comments</div>
-            <div id="comment-body">
-                <div class="comment-body">
-                    <div class="commenter">Fabrice Mukunzi</div>
-                    <div class="comment">Bro send me a link i just want to join SheCanCancode and give more details about it. byaba ari sawa kabisa</div>
-                </div>
-                <div class="comment-body">
-                    <div class="commenter">Fabrice Mukunzi</div>
-                    <div class="comment">Bro send me a link i just want to join SheCanCancode and give more details about it.</div>
-                </div>
-                <div class="comment-body">
-                    <div class="commenter">Fabrice Mukunzi</div>
-                    <div class="comment">Bro send me a link i just want to join SheCanCancode and give more details about it.</div>
-                </div>
-                <div class="comment-body">
-                    <div class="commenter">Fabrice Mukunzi</div>
-                    <div class="comment">Bro send me a link i just want to join SheCanCancode and give more details about it.</div>
-                </div>
+            <div id="comments-body">
+
             </div>
         </div>
-        <script>
-            let editor = document.getElementById("editor");
-            let btn = document.getElementById("btn-post");
-            let names = document.getElementById("names");
-            let namesPattern = /^[a-zA-Z]+(([',. -][a-zA-Z ])?[a-zA-Z]*)*$/;
-
-            function checkEditor() {
-                if (!names.value.match(namesPattern)) {
-                    alert("invalid name");
-                } else if (editor.innerHTML == "") {
-                    alert("Comment can't be empty");
-                } else {
-                    window.location = "./singleblog.html"
-                }
-            }
-        </script>
-        <script src="./js/storage.js"></script>
+        <script src="./js/singleblog.js"></script>
         <script src="./js/main.js"></script>
     </body>
 

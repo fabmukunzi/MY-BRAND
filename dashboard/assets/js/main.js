@@ -1,3 +1,18 @@
+// Get all buttons with class="btn" inside the container
+var btns = document.getElementsByClassName("modes");
+// Loop through the buttons and add the active class to the current/clicked button
+for (var i = 0; i < btns.length; i++) {
+  btns[i].addEventListener("click", function() {
+    var current = document.getElementsByClassName("active");
+    current[0].className = current[0].className.replace("active", "");
+    this.className += " active";
+  });
+}
+document.getElementById("logo-container").style.cursor="pointer"
+document.getElementById("logo-container").addEventListener("click",()=>{
+    window.location.replace("../index.html")
+})
+
 function showComments() {
     document.getElementById("table1").style.display = 'none';
     document.getElementById("table3").style.display = 'none';
@@ -33,22 +48,22 @@ function AddArticle() {
     }
 }
 
-function EditArticles() {
-    var modal = document.getElementById("edit-articles");
-    var btn = document.getElementById("edit-article");
-    var span = document.getElementsByClassName("close")[1];
-    btn.onclick = function() {
-        modal.style.display = "block";
-    }
-    span.onclick = function() {
-        modal.style.display = "none";
-    }
-    window.onclick = function(event) {
-        if (event.target == modal) {
-            modal.style.display = "none";
-        }
-    }
-}
+// function editArticles() {
+//     // var modal = document.getElementById("edit-articles");
+//     // var btn = document.getElementById("edit-article");
+//     // var span = document.getElementsByClassName("close")[1];
+//     // btn.onclick = function() {
+//     //     modal.style.display = "block";
+//     // }
+//     // span.onclick = function() {
+//     //     modal.style.display = "none";
+//     // }
+//     // window.onclick = function(event) {
+//     //     if (event.target == modal) {
+//     //         modal.style.display = "none";
+//     //     }
+//     // }
+// }
 
 function makeBold() {
     document.execCommand("bold");
@@ -95,3 +110,11 @@ function justifyCenter() {
 function justifyRight() {
     document.execCommand("justifyRight");
 }
+// function checkToken(){
+//     let token=localStorage.getItem("token");
+//     if(!token){
+//         alert("You need to login first")
+//         location.replace("http://127.0.0.1:5502/index.html#login")
+//     }
+// }
+// checkToken();
